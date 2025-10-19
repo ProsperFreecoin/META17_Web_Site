@@ -1,0 +1,400 @@
+h1{
+    text-align: center;
+}
+
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(-45deg, #00c6ff, #0072ff, #00ffcc, #007bff);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+img{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    border: 5px #dde01b solide;
+    overflow: hidden;
+}
+em{
+    color: #0ecf85dc;
+}
+
+#x{
+    background: linear-gradient(90deg, rgba(227,240,255,0.7) 60%, rgba(33,150,243,0.7) 100%); border-color: #8e24aa;
+    background: linear-gradient(135deg, rgba(229,57,53,0.5) 0%, rgba(67,160,71,0.5) 25%, rgba(30,136,229,0.5) 60%, rgba(251,192,45,0.5) 100%);
+    color: #2196f3;
+    border-color: #2196f3;
+}
+#b{
+    background: linear-gradient(90deg, rgba(255,230,0,0.7) 60%, rgba(0,146,63,0.7) 100%);
+    color: #00923f;
+    border-color:#00923f;
+}
+#p{
+    border-color: #334ee7;
+    background: linear-gradient(90deg, rgba(224, 222, 218, 0.842) 60%, rgba(38, 50, 180, 0.7) 100%);
+    color: hsl(253, 88%, 51%);
+}
+#m{
+    color: #222;
+    border-color: #222;
+    background: linear-gradient(90deg, rgba(255,230,0,0.7) 60%, rgba(34,34,34,0.7) 100%);
+}
+#c{
+     border-color: #8e24aa;
+    background: linear-gradient(135deg, rgba(229,57,53,0.5) 0%, rgba(67,160,71,0.5) 25%, rgba(30,136,229,0.5) 60%, rgba(251,192,45,0.5) 100%);
+}
+nav{
+    position:relative;
+    top:5px;
+    border: 2px rgba(0, 0, 0, 0.288) solid;
+    border-radius: 15px;
+}
+
+nav .menu {
+    display: flex;/*pour mettre tous les liens sur la meme ligne*/
+    justify-content: space-between;/*il met un espace egale entre les liens*/
+    align-items: center;/*centre verticalement. Il n'a pas d'utilité dans ce cas*/
+    background-color: #f2f2f2;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.menu a{
+    text-decoration: none;
+    color:#333;
+    font-weight: bold;
+    border:2px #007bff solid;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: rgba(255, 255, 255, 0.911);
+    cursor: pointer;
+}
+.menu a:hover{
+    background-color: white;
+    border-color:#007bff;
+    color: #007bff;
+}
+
+:root{
+    --primary: #007bff; /* charte couleur principale */
+    --muted-bg: rgba(242,242,242,0.6);
+}
+
+/* Vanta background must cover the full page */
+#vanta-bg{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cards container: two per row, equidistant */
+.cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 960px;
+    margin: 48px auto;
+    width: calc(100% - 40px);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Individual card  white-space:normal;
+        word-wrap: break-word;style */
+.card{
+    /* Remove any width or max-width that could break grid layout */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e3f0ff 0%, #f8fbff 100%);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    transition: transform 200ms ease, box-shadow 200ms ease, opacity 300ms ease, background 200ms;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(18px);
+    padding: 6px 0 0 0;
+    min-height: 150px;
+}
+
+/* Make the anchor fill the card and remove decoration */transform: translateY(-5px);
+.card a{
+    display: block; /* makes the whole card clickable */
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+    padding: 36px 20px;
+    text-align: center;
+    user-select: none;
+    border-radius: 10px;
+    outline: none;
+    
+}
+
+.card a:hover{
+    transform: scale(0.998);
+}
+
+.card a:active{
+    transform: scale(0.998);
+}
+
+/* Hover effect */
+.card:hover{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.438);
+    background: linear-gradient(135deg, #d0e6ff 0%, #f0f7ff 100%);
+}
+
+/* Visible state (added by JS on load for a staggered entrance) */
+.card.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styles for card child elements */
+.card-child {
+    border: 2px solid #90caf9; /* couleur bleu clair pour contraste */
+    border-radius: 10px;
+    margin: 12px 4px 0 4px;
+    height: 36px;
+    background: linear-gradient(90deg, #f8fbff 60%, #e3f0ff 100%);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    width: 90%;
+    margin: 8px auto 0 auto;
+    align-self: center;
+}
+
+.card-child:last-child {
+    margin-bottom: 16px;
+    height: 36px;
+}
+
+.card-child + .card-child {
+    margin-top: 18px;
+    
+}
+
+.card-child a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    font-size: 1.35rem;
+    letter-spacing: 0.5px;
+}
+
+.cards .card:nth-child(1) .card-child a {
+    width: 100%;
+    font-size: 1.35rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.cards .card:nth-child(1) .card-child a {
+    color: #2196f3;
+}
+.cards .card:nth-child(2) .card-child a {
+    color: #00923f;
+}
+.cards .card:nth-child(3) .card-child a {
+    color: #1a237e;
+}
+.cards .card:nth-child(4) .card-child a {
+    color: #222;
+}
+
+.card-child a:hover {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+}
+
+.cards .card:nth-child(1) {
+    background: linear-gradient(135deg, #2196f3 0%, #e3f0ff 100%);
+    border-color: #2196f3;
+}
+.cards .card:nth-child(1) .card-child {
+    border-color: #2196f3;
+    background: linear-gradient(90deg, rgba(227,240,255,0.7) 60%, rgba(33,150,243,0.7) 100%);
+}
+
+.cards .card:nth-child(2) {
+    border-color: #00923f;
+    background: linear-gradient(135deg, #00923f 0%, #ffe600 100%);
+}
+.cards .card:nth-child(2) .card-child {
+    border-color: #ffe600;
+    background: linear-gradient(90deg, rgba(255,230,0,0.7) 60%, rgba(0,146,63,0.7) 100%);
+}
+
+.cards .card:nth-child(3) {
+    border-color: #1a237e;
+    background: linear-gradient(135deg, #1a237e 0%, #d3cec7 100%);
+}
+.cards .card:nth-child(3) .card-child {
+    border-color: #ecebe8;
+    background: linear-gradient(90deg, rgba(231, 227, 220, 0.7) 60%, rgba(26,35,126,0.7) 100%);
+}
+
+.cards .card:nth-child(4) {
+    border-color: #ffe600;
+    background: linear-gradient(135deg, #ffe600 0%, #222 100%);
+}
+.cards .card:nth-child(4) .card-child {
+    border-color: #222;
+    background: linear-gradient(90deg, rgba(255,230,0,0.7) 60%, rgba(34,34,34,0.7) 100%);
+}
+
+.cards .card:nth-child(5) {
+    border-color: #8e24aa;
+    background: linear-gradient(135deg, rgba(229,57,53,0.5) 0%, rgba(67,160,71,0.5) 25%, rgba(30,136,229,0.5) 60%, rgba(251,192,45,0.5) 100%);
+}
+.cards .card:nth-child(5) .card-child:nth-child(1) {
+    border-color: #e53935;
+    background: linear-gradient(90deg, rgba(229,57,53,0.7) 0%, rgba(255,255,255,0.5) 100%);
+}
+.cards .card:nth-child(5) .card-child:nth-child(2) {
+    border-color: #43a047;
+    background: linear-gradient(90deg, rgba(67,160,71,0.7) 0%, rgba(255,255,255,0.5) 100%);
+}
+.cards .card:nth-child(5) .card-child:nth-child(3) {
+    border-color: #1e88e5;
+    background: linear-gradient(90deg, rgba(30,136,229,0.7) 0%, rgba(255,255,255,0.5) 100%);
+}
+.cards .card:nth-child(5) .card-child:nth-child(4) {
+    border-color: #fbc02d;
+    background: linear-gradient(90deg, rgba(251,192,45,0.7) 0%, rgba(255,255,255,0.5) 100%);
+}
+
+/* Amélioration de la lisibilité et étirement des liens sur les cartes avec background image */
+.cards .card:nth-child(-n+4) .card-child a {
+    width: 100%;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18), 0 1px 0 #2196f3;
+    letter-spacing: 0.5px;
+    padding: 12px 0;
+    background: rgba(0,0,0,0.08);
+    border-radius: 8px;
+    text-align: center;}
+    .cards .card:nth-child(-n+4) .card-child:hover{
+        transform: 
+            translateY(-2px)
+        ;
+        box-shadow: 0 5px 3px rgba(255, 255, 255, 0.76);
+    }
+
+.cards .card:nth-child(1) .card-child a {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.22), 0 1px 0 #2196f3;
+}
+.cards .card:nth-child(2) .card-child a {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.22), 0 1px 0 #00923f;
+}
+.cards .card:nth-child(3) .card-child a {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.22), 0 1px 0 #1a237e;
+}rgba(226, 30, 30, 0.808)
+.cards .card:nth-child(4) .card-child a {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.22), 0 1px 0 #ffe600;
+}
+
+@media (min-width: 900px) {
+    .cards {
+        gap: 48px;
+        
+    }.cards .card:nth-child(-n+4) .card-child a
+    .card {
+        min-height: 120px;
+        padding: 4px 0 0 0;
+    }
+    .card-child {
+        border: 2px solid #90caf9;
+        width: 95%;
+        height: 44px;
+        margin: 12px 4px 0 4px;
+    }
+    .card-child + .card-child {
+        margin-top: 18px;
+    }
+    .card-child:last-child {
+        margin-bottom: 16px;
+        height: 44px;
+    }
+}
+
+@media (min-width: 780px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cards .card:nth-child(1),
+    .cards .card:nth-child(3) {
+        margin-left: -50px;
+    }
+    .cards .card:nth-child(2),
+    .cards .card:nth-child(4) {
+        margin-left: 50px;
+    }
+    .cards .card:nth-child(5) {
+        grid-column: 1 / span 2;
+        width: 98%;
+        max-width: 98%;
+        margin-left: 1%;
+        margin-right: 1%;
+        border-radius: 12px;
+    }
+    .card {
+        max-width: none;
+        width: 99%;
+        margin-left: 4px;
+        margin-right: 4px;
+        padding: 2px 0 0 0;
+    }
+    .card-child {
+        width: 92%;
+        margin: 8px auto 0 auto;
+    }
+}
+
+@media (max-width: 700px){
+    .cards{
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 24px auto;
+    }
+    .cards .card:nth-child(-n+4) .card-child a {
+        font-size: 1.05rem;
+        padding: 10px 0;
+        letter-spacing: 0.3px;
+        text-align: center;
+    }
+    
+}
