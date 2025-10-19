@@ -1,8 +1,7 @@
 h1{
     text-align: center;
 }
-
-
+/*animation en background*/
 body {
   height: 100vh;
   margin: 0;
@@ -32,9 +31,9 @@ img{
     overflow: hidden;
 }
 em{
-    color: #0ecf85dc;
+    color: #1cda2ce8;
 }
-
+/*Css specifique des elements du nav bar*/
 #x{
     background: linear-gradient(90deg, rgba(227,240,255,0.7) 60%, rgba(33,150,243,0.7) 100%); border-color: #8e24aa;
     background: linear-gradient(135deg, rgba(229,57,53,0.5) 0%, rgba(67,160,71,0.5) 25%, rgba(30,136,229,0.5) 60%, rgba(251,192,45,0.5) 100%);

@@ -38,3 +38,4 @@ window.addEventListener('resize', () => {
   // optional: re-init Vanta on resize to keep it responsive
   initVanta();
 });
+
